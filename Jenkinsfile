@@ -5,8 +5,17 @@ pipeline
     stages{
       stage('testing')
             {
-              steps{
-                sh "pwd"
+              script {
+                    // Apply Terraform changes based on the branch
+                    if (env.BRANCH_NAME == 'master') {
+                        sh 'touch rana'
+                    } else if (env.BRANCH_NAME == 'test1') {
+                        sh 'touch vikas'
+                    } else if (env.BRANCH_NAME == 'test2') {
+                        sh 'touch ravi'
+                    }
+                }
+            }
               }
             }
     }
