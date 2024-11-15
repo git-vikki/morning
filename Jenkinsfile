@@ -10,7 +10,7 @@ steps
 {
 script {
                     // Apply Terraform changes based on the branch
-                    if (env.BRANCH_NAME == 'master') {
+                    if (env.BRANCH_NAME == 'main') {
                         sh 'touch rana'
                     } else if (env.BRANCH_NAME == 'test1') {
                         sh 'touch vikas'
