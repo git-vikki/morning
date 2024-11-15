@@ -1,11 +1,14 @@
 pipeline
 {
-  agent any
-  {
-    stages{
-      stage('testing')
-            {
-              script {
+agent any
+
+stages
+{
+stage('hhhh')
+{
+steps
+{
+script {
                     // Apply Terraform changes based on the branch
                     if (env.BRANCH_NAME == 'master') {
                         sh 'touch rana'
@@ -15,9 +18,8 @@ pipeline
                         sh 'touch ravi'
                     }
                 }
-            }
-              }
-            }
-    }
-  }
+
+}
+}
+}
 }
